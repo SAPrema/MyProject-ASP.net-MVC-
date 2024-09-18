@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MyProject.Models.Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h1>Students</h1>
+
+<div class="col-md-8">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Date of Birth</th>
+                <th>State</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.Email</td>
+                    <td>@student.PhoneNumber</td>
+                    <td>@student.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                    <td>@student.State</td>
+                    <td>@student.City</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+
+<style>
+/* Custom table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Table head background */
+.thead-dark th {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Hover effect on table rows */
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Alternate row colors for better readability */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Border styling for table */
+.table-bordered td, .table-bordered th {
+    border: 2px solid #dee2e6;
+    padding: 8px;
+}
+
+/* Better padding for table cells */
+td {
+    padding: 20px;
+}
+
+/* Make the header sticky if needed */
+thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+</style>

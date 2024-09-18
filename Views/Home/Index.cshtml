@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MyProject.Models.Student>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Student Identification Form</h1>
+    <p>To manage student data, click the link below</p>
+    <p>
+        <a class="btn btn-primary btn-lg" asp-controller="Students" asp-action="Index">Students</a>
+    </p>
+</div>
